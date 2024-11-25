@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SIATEP</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_pengumuman">Pengumuman</string>
+    <string name="title_profile">Profile</string>
+    <string name="profile">Profile</string>
+</resources>
