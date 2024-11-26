@@ -10,7 +10,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="129dp"
-        android:backgroundTint="#122D4F"
+        android:backgroundTint="@color/dark_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -66,7 +66,7 @@
             android:layout_marginStart="345dp"
             android:layout_marginTop="100dp"
             android:text="Siswa"
-            android:textColor="#FF8B40"
+            android:textColor="@color/orange"
             android:textSize="13dp"
             tools:ignore="TextSizeCheck,TextSizeCheck" />
 

@@ -10,7 +10,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="129dp"
-        android:backgroundTint="#122D4F"
+        android:backgroundTint="@color/dark_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,6 +22,7 @@
             android:src="@drawable/atep" />
 
         <TextView
+            android:id="@+id/nama_siswa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
@@ -32,6 +33,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/kelas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
@@ -61,12 +63,13 @@
             android:textSize="13dp" />
 
         <TextView
+            android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="345dp"
             android:layout_marginTop="100dp"
             android:text="Siswa"
-            android:textColor="#FF8B40"
+            android:textColor="@color/orange"
             android:textSize="13dp"
             tools:ignore="TextSizeCheck,TextSizeCheck" />
 
@@ -79,7 +82,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:backgroundTint="#B3C8CF"
+        android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +91,6 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:src="@drawable/wave" />
 
         <TextView
@@ -113,19 +115,21 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="155dp"
+        android:layout_width="0dp"
         android:layout_height="120dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#B3C8CF"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@id/cardView6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="72dp"
             android:src="@drawable/wave" />
 
         <TextView
@@ -148,11 +152,12 @@
             android:textSize="12dp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/izin"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#F9F7E4"
+            android:backgroundTint="@color/white2"
             app:cardCornerRadius="25dp">
 
             <TextView
@@ -172,12 +177,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
-        android:layout_width="155dp"
+        android:layout_width="0dp"
         android:layout_height="120dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="#122D4F"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/dark_blue"
         app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
@@ -203,11 +210,12 @@
             tools:ignore="TextSizeCheck" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/sakit"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#F9F7E4"
+            android:backgroundTint="@color/white2"
             app:cardCornerRadius="25dp">
 
             <TextView
@@ -289,12 +297,13 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="130dp"
-            android:backgroundTint="#FFD0B1">
+            android:backgroundTint="@color/light_orange">
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:backgroundTint="#FF8B40">
+                android:backgroundTint="@color/orange">
                 <TextView
+                    android:id="@+id/bulan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sept"
@@ -313,7 +322,7 @@
                 android:layout_marginTop="10dp"/>
 
         </androidx.cardview.widget.CardView>
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -377,7 +386,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFD0B1"
+            android:textColor="@color/light_orange"
             android:text="Sedang Belajar"
             android:layout_marginTop="60dp"
             android:textSize="11dp"
@@ -405,11 +414,11 @@
             app:cardCornerRadius="10dp"
             android:layout_gravity="center"
             android:layout_marginEnd="130dp"
-            android:backgroundTint="#FFD0B1">
+            android:backgroundTint="@color/light_orange">
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:backgroundTint="#FF8B40">
+                android:backgroundTint="@color/orange">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -495,7 +504,7 @@
             android:layout_marginStart="150dp"
             android:layout_marginTop="60dp"
             android:text="-"
-            android:textColor="#FFD0B1"
+            android:textColor="@color/light_orange"
             android:textSize="11dp"
             tools:ignore="TextSizeCheck,TextSizeCheck" />
 
