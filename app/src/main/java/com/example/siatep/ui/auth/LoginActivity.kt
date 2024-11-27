@@ -44,6 +44,9 @@ class LoginActivity : AppCompatActivity() {
                     val saveToken = async(Dispatchers.IO) {
                         userPreferences.saveSession(
                             User(
+                                response.user.id,
+                                response.user.name,
+                                response.user.idKelas,
                                 response.user?.email.toString(),
                                 AUTH + (response.user?.token.toString()),
                                 true

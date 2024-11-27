@@ -8,14 +8,11 @@ import com.example.siatep.repository.SiatepRepository
 import com.example.siatep.ui.auth.LoginViewModel
 import com.example.siatep.ui.home.HomeViewModel
 
-class ViewModelFactory private constructor(private val siatepRepository: SiatepRepository) :
+class AbsenModelFactory private constructor(private val siatepRepository: SiatepRepository) :
     ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         when {
-            modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
-                return LoginViewModel(siatepRepository) as T
-            }
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 return HomeViewModel(siatepRepository) as T
             }
@@ -25,10 +22,10 @@ class ViewModelFactory private constructor(private val siatepRepository: SiatepR
 
     companion object {
         @Volatile
-        private var instance: ViewModelFactory? = null
-        fun getInstance(context: Context): ViewModelFactory =
+        private var instance: AbsenModelFactory? = null
+        fun getInstance(context: Context): AbsenModelFactory =
             instance ?: synchronized(this) {
-                instance ?: ViewModelFactory(Injection.provideRepository(context))
+                instance ?: AbsenModelFactory(Injection.provideRepository(context))
             }.also { instance = it }
     }
 }

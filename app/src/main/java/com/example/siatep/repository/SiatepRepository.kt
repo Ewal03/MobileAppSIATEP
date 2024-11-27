@@ -2,6 +2,8 @@ package com.example.siatep.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
+import com.example.siatep.data.response.AbsenResponse
+import com.example.siatep.data.response.InputAbsenResponse
 import com.example.siatep.data.response.LoginResponse
 import com.example.siatep.data.retrofit.ApiService
 import com.example.siatep.preferences.User
@@ -13,8 +15,16 @@ class SiatepRepository(private val userPreferences: UserPreferences, private val
         return apiService.postLogin(email,password)
     }
 
+    suspend fun getAbsen(token: String): AbsenResponse{
+        return apiService.getAbsen(token)
+    }
+
     fun getSession(): LiveData<User> {
         return userPreferences.getSession().asLiveData()
+    }
+
+    suspend fun postAbsen(status: String, tgl_absen: String, id_user: Int, id_kelas: Int): InputAbsenResponse{
+        return apiService.postAbsen(status,tgl_absen, id_user, id_kelas)
     }
 
 
