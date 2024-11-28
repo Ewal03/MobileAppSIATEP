@@ -30,15 +30,12 @@ class DetailActivity : AppCompatActivity() {
         animateCardView()
     }
     private fun animateCardView() {
-        // Animasi Slide Up
         val slideUp = ObjectAnimator.ofFloat(binding.main, "translationY", 1000f, 0f)
         slideUp.duration = 800
 
-        // Animasi Fade In
         val fadeIn = ObjectAnimator.ofFloat(binding.main, "alpha", 0f, 1f)
         fadeIn.duration = 800
 
-        // Kombinasi Animasi
         val animatorSet = AnimatorSet()
         animatorSet.playTogether(slideUp, fadeIn)
         animatorSet.start()
