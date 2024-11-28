@@ -55,7 +55,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="100dp"
-            android:text="25/09/2012"
+            android:text="28/11/2024"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold" />
@@ -89,8 +89,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NIS"
-            android:layout_marginStart="15dp"
+            android:text="NISN : 10521064"
+            android:layout_marginStart="60dp"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -112,12 +112,12 @@
         tools:layout_editor_absoluteX="30dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="140dp"
-            android:layout_marginStart="15dp"
-            android:text="No HP"
+            android:layout_marginEnd="110dp"
+            android:layout_marginStart="50dp"
+            android:text="No HP : 081282845923"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -140,8 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="140dp"
-            android:layout_marginStart="15dp"
-            android:text="Alamat"
+            android:layout_marginStart="60dp"
+            android:text="Alamat : Bandung"
             android:textColor="@color/black"
             android:textStyle="bold" />
 

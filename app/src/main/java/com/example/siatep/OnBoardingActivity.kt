@@ -23,6 +23,8 @@ class OnBoardingActivity : AppCompatActivity() {
         binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         userPreferences = UserPreferences.getInstance(this.dataStore)
         CoroutineScope(Dispatchers.IO).launch {
             updateUi()

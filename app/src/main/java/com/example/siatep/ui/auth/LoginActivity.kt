@@ -30,6 +30,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         userPreferences = UserPreferences.getInstance(this.dataStore)
 
         loginViewModel.isLoading.observe(this){
