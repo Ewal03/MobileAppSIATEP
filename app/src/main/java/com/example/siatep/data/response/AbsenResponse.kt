@@ -31,7 +31,7 @@ data class DataItem(
 	val name: String,
 
 	@field:SerializedName("created_at")
-	val createdAt: Any,
+	val createdAt: String,
 
 	@field:SerializedName("id_kelas")
 	val idKelas: Int,

@@ -1,6 +1,7 @@
 package com.example.siatep.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.siatep.MainActivity
 import com.example.siatep.databinding.FragmentHomeBinding
 import com.example.siatep.preferences.UserPreferences
 import com.example.siatep.preferences.dataStore
@@ -20,6 +23,9 @@ import com.example.siatep.viewmodel.AbsenModelFactory
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
 import com.journeyapps.barcodescanner.ScanOptions
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 
 class HomeFragment : Fragment() {
@@ -63,17 +69,36 @@ class HomeFragment : Fragment() {
                     viewModel.getAbsen(user.token)
                     viewModel.absen.observe(viewLifecycleOwner){response->
                         if (response.message==true){
-                            binding.rvHome.setHasFixedSize(true)
-                            binding.rvHome.layoutManager = LinearLayoutManager(context)
-                            homeAdapter = HomeAdapter()
-                            binding.rvHome.adapter = homeAdapter
-                            homeAdapter.submitList(response.data)
-                            homeAdapter.notifyDataSetChanged()
-
+                            val builder = AlertDialog.Builder(requireContext())
+                            builder.setTitle("Alert!")
+                            builder.setMessage("Absen Berhasil")
+                            builder.setPositiveButton("Yes") { _, _ ->
+                                binding.rvHome.setHasFixedSize(true)
+                                binding.rvHome.layoutManager = LinearLayoutManager(context)
+                                homeAdapter = HomeAdapter()
+                                binding.rvHome.adapter = homeAdapter
+                                homeAdapter.submitList(response.data)
+                                homeAdapter.notifyDataSetChanged()
+                                val intent = Intent(requireContext(), MainActivity::class.java)
+                                startActivity(intent)
+                                activity?.finish()
+                            }
+                            builder.show()
+                            builder.create()
                         }
                     }
                 }else{
-                    Toast.makeText(context, "ai sia, ai sia kunaon gblg", Toast.LENGTH_SHORT).show()
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setTitle("Alert!")
+                    builder.setMessage("Absen gagal karena salah kelas")
+                    builder.setPositiveButton("Yes") { _, _ ->
+                        val intent = Intent(requireContext(), MainActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                    builder.show()
+                    builder.create()
+                    Toast.makeText(context, "Salah kelas", Toast.LENGTH_SHORT).show()
                 }
 
             }
